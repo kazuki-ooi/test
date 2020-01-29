@@ -1,0 +1,120 @@
+import java.util.*;
+import java.lang.Math;
+
+public class Main {
+    public static void main(String[] args) {
+        // 自分の得意な言語で
+        // Let's チャレンジ！！
+        
+        double s1 = 0, s2 = 0;
+        int[] place = new int[2];
+        String[] news = new String[2];
+
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        for (int i = 0; i < 2; i++) {
+          String token1 = sc.next();
+          String token2 = sc.next();
+          place[i] = Integer.parseInt(token1);
+          news[i] = token2;
+        }
+        
+        if(news[0].equals("N")){
+           switch(news[1]){
+                case "N":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = 0;
+                    break;
+                   
+                case "S":
+                    s1 = (double)((place[0] + place[1]) * 100);
+                    s2 = 0;
+                    break;
+                    
+                case "W":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = (double)Math.min(place[0], place[1]) * 100 * Math.PI /2;
+                    break;
+                    
+                case "E":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = (double)Math.min(place[0], place[1]) * 100 * Math.PI /2;
+                    break;
+           }
+        }
+        
+        if(news[0].equals("S")){
+           switch(news[1]){
+                case "S":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = 0;
+                    break;
+                   
+                case "N":
+                    s1 = (double)((place[0] + place[1]) * 100);
+                    s2 = 0;
+                    break;
+                    
+                case "W":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = (double)Math.min(place[0], place[1]) * 100 * Math.PI /2;
+                    break;
+                    
+                case "E":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = (double)Math.min(place[0], place[1]) * 100 * Math.PI /2;
+                    break;
+           }
+        }
+        
+        if(news[0].equals("E")){
+           switch(news[1]){
+                case "E":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = 0;
+                    break;
+                   
+                case "W":
+                    s1 = (double)((place[0] + place[1]) * 100);
+                    s2 = 0;
+                    break;
+                    
+                case "N":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = (double)Math.min(place[0], place[1]) * 100 * Math.PI /2;
+                    break;
+                    
+                case "S":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = (double)Math.min(place[0], place[1]) * 100 * Math.PI /2;
+                    break;
+           }
+        }
+        
+        if(news[0].equals("W")){
+           switch(news[1]){
+                case "W":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = 0;
+                    break;
+                   
+                case "E":
+                    s1 = (double)((place[0] + place[1]) * 100);
+                    s2 = 0;
+                    break;
+                    
+                case "N":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = (double)Math.min(place[0], place[1]) * 100 * Math.PI /2;
+                    break;
+                    
+                case "S":
+                    s1 = (double)(Math.abs(place[0] - place[1]) * 100);
+                    s2 = (double)Math.min(place[0], place[1]) * 100 * Math.PI /2;
+                    break;
+           }
+        }
+        
+        System.out.println(s1 + s2);
+    }
+}
